@@ -21,6 +21,7 @@ import React from 'react'
 import Faq from '../components/accordion'
 import Nav from '../components/nav'
 import Hero from '../components/hero'
+import { EVENT_FULL, LOCATION_URL, EVENT_YEAR, ENTRY_FEE, REGISTRATION_EMBED_URL, MAP_QUERY, SPONSOR_PACKET_URL, MAILTO } from '../lib/constants'
 
 const Index = props => (
   <>
@@ -50,7 +51,7 @@ const Index = props => (
       </Text>
       <Text variant="lead">
         <b>
-          This is the eighth iteration of hillsHacks, Watchung Hills' premier
+          This is the ninth iteration of hillsHacks, Watchung Hills' premier
           hackathon open to students grades 7 through 12.
         </b>
       </Text>
@@ -94,9 +95,9 @@ const Index = props => (
     <Container as="section" variant="copy" py={4} {...props}>
       <Card>
         <Heading variant="headline" sx={{fontSize: "40px"}}>Details</Heading>
-        <Text as="p"><b>Where:</b> <Link href="https://goo.gl/maps/se4i7cSCAxGcRvYHA" target="_blank">Watchung Hills Regional High School</Link> (108 Stirling Rd, Warren, NJ 07059)</Text><br/>
-        <Text as="p"><b>When:</b> April 26th, 2025 11:00 AM - 4:30 PM</Text><br/>
-        <Text as="p"><b>Cost:</b> There will be an entry fee of $25 to cover costs for food and T-shirts for all attendees!</Text><br/>
+        <Text as="p"><b>Where:</b> <Link href="#map">Watchung Hills Regional High School</Link> (108 Stirling Rd, Warren, NJ 07059)</Text><br/>
+        <Text as="p"><b>When:</b> {EVENT_FULL}</Text><br/>
+        <Text as="p"><b>Cost:</b> There will be an entry fee of {ENTRY_FEE} to cover costs for food and T-shirts for all attendees!</Text><br/>
         <Text as="p"><b>Who:</b> All students in grades 7 and up are welcome to attend, regardless of experience!</Text>
       </Card>
     </Container>
@@ -107,7 +108,7 @@ const Index = props => (
     </Container>
 
     <Container
-      id="schedule"
+      id="logistics"
       as="section"
       sx={{ textAlign: 'center' }}
       py={4}
@@ -127,8 +128,33 @@ const Index = props => (
         }}
       />
     </Container>
+    {/* Google Maps embed below schedule */}
+    <Container id="map" as="section" py={3} sx={{ textAlign: 'center' }}>
+      <iframe
+        title="Watchung Hills Map"
+        src={'https://maps.google.com/maps?q=' + MAP_QUERY + '&output=embed'}
+        width="100%"
+        height="360"
+        style={{ border: 0, maxWidth: '900px' }}
+      />
+    </Container>
+
+    {/* Mailing list / registration embed */}
+    <Container id="mailing" as="section" py={4} variant="copy" {...props}>
+      <Heading variant="headline">Join our mailing list</Heading>
+      <Text as="p" mb={3}>Stay updated — sign up for announcements and updates.</Text>
+      <Box sx={{ display: 'flex', justifyContent: 'center' }}>
+        <iframe
+          title="Registration Form"
+          src={REGISTRATION_EMBED_URL}
+          width="640"
+          height="800"
+          style={{ border: 0 }}
+        />
+      </Box>
+    </Container>
     <Container
-      id="Sponsors"
+      id="sponsors"
       as="section"
       sx={{ textAlign: 'center' }}
       py={4}
@@ -150,7 +176,7 @@ const Index = props => (
           }}
         />
       </a>
-      <a href="https://artofproblemsolving.com/" target="_blank">
+        <a href="https://artofproblemsolving.com/" target="_blank">
           <Image
           src="/AoPS_Main_Logo (1).png"
           sx={{
@@ -163,6 +189,19 @@ const Index = props => (
           }}
         />
       </a>
+      <Box sx={{ mt: 3, display: 'flex', gap: 3, justifyContent: 'center', flexWrap: 'wrap' }}>
+        <Button as="a" href={SPONSOR_PACKET_URL} target="_blank" variant="outline">Sponsor packet</Button>
+        <Button as="a" href={MAILTO} variant="primary">Contact us</Button>
+      </Box>
+    </Container>
+
+    {/* Contact section */}
+    <Container id="contact" as="section" py={4} variant="copy" {...props}>
+      <Heading variant="headline">Contact</Heading>
+      <Text as="p" mb={2}>Have questions about sponsorships, volunteering, or the event? Reach out and we'll get back to you shortly.</Text>
+      <Box sx={{ display: 'flex', gap: 3, justifyContent: 'center' }}>
+        <Button as="a" href={MAILTO} target="_self" variant="primary">Email us</Button>
+      </Box>
     </Container>
     <Container as="section" py={4} {...props}>
       <Card>
@@ -171,19 +210,15 @@ const Index = props => (
             <Heading as="h1" variant="headline">
               HillsHacks is on the way!
             </Heading>
-            <Heading variant="subtitle">
-              To view the schedule, click here
-            </Heading>
           </Box>
           <Box sx={{ alignSelf: 'center' }}>
             <Button
               variant="lg"
               as="a"
-              target="_blank"
+              href="#mailing"
               mr={4}
-              href="https://drive.google.com/file/d/1_pGeCsgjBPJoBectF0f7YiK0PXAKdIQ6/view?usp=sharing"
             >
-              Hackathon Schedule
+              Join our mailing list
             </Button>
           </Box>
         </Flex>
@@ -204,8 +239,8 @@ const Index = props => (
         Created with &#x3C;3 by the Watchung Hills CS Club. See the{' '}
         <Link href="https://github.com/LiterallyCanada312/HillsHacks2025">source</Link>.
       </Text>
-      <Text as="p" sx={{ fontSize: 1, color: 'muted' }}>
-        © Copyright 2025 hillsHacks
+        <Text as="p" sx={{ fontSize: 1, color: 'muted' }}>
+        © Copyright {EVENT_YEAR} hillsHacks
       </Text>
     </footer>
   </>

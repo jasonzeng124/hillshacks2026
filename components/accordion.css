@@ -44,6 +44,11 @@
     animation: fadein 0.35s ease-in;
 }
 
+/* Enable smooth scrolling for in-page anchor links */
+html {
+    scroll-behavior: smooth;
+}
+
 /* -------------------------------------------------- */
 /* ---------------- Animation part ------------------ */
 /* -------------------------------------------------- */

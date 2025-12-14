@@ -24,7 +24,7 @@ const Nav = props => {
             <Image src="/icon.svg" width="36"/>
           </NavLink>
           <Box sx={{flex: '1 1 auto', justifyContent: "", margin: '3'}}>
-            <NavLink target="_blank" href="https://drive.google.com/file/d/1_pGeCsgjBPJoBectF0f7YiK0PXAKdIQ6/view?usp=sharing" p={2}>
+            <NavLink href="#mailing" p={2}>
               Register
             </NavLink>
             <NavLink href="#about" p={2}>
@@ -33,8 +33,15 @@ const Nav = props => {
             <NavLink href="#faq" p={2}>
               FAQ
             </NavLink>
-            <NavLink href="#schedule" p={2}>
-              Schedule
+            <NavLink href="#map" p={2}>
+              Logistics
+            </NavLink>
+            
+            <NavLink href="#sponsors" p={2}>
+              Sponsors
+            </NavLink>
+            <NavLink href="#contact" p={2}>
+              Contact
             </NavLink>
             {/*<NavLink href="https://2021.hillshacks.com/" p={2}>
               2021 Site

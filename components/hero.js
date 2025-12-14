@@ -1,6 +1,7 @@
 import { Box, Image, Container, Text, Heading, Button } from 'theme-ui';
 import { backgroundImage } from './background-image';
 import { mountains } from './mountains';
+import { HERO_DATE } from '../lib/constants';
 
 const Hero = props => (
   <Box 
@@ -27,11 +28,9 @@ const Hero = props => (
           WebkitUserDrag: 'none',
         }}
       />
-      <Heading my={2} variant="subtitle" color="white" sx={{textShadow: "0 0 32px #000"}}><b>Breaking Boundaries</b></Heading>
-      <Heading my={2} variant="subtitle" color="white" sx={{textShadow: "0 0 32px #000"}}>April 26th, 2025</Heading>
+      <Heading my={2} variant="subtitle" color="white" sx={{textShadow: "0 0 32px #000"}}>{HERO_DATE}</Heading>
       <Text mt={2} mb={4} sx={{display: "block", textShadow: "0 0 32px #000"}} color="white">In-Person, Watchung Hills Regional High School</Text>
-      <Button variant="lg" as="a" target="_blank" my={2}
-    href="https://drive.google.com/file/d/1_pGeCsgjBPJoBectF0f7YiK0PXAKdIQ6/view?usp=sharing">Schedule</Button>
+      <Button variant="lg" as="a" my={2} href="#mailing">Join our mailing list</Button>
     </Container>
   </Box> 
 )
