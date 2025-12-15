@@ -21,13 +21,16 @@ import React from 'react'
 import Faq from '../components/accordion'
 import Nav from '../components/nav'
 import Hero from '../components/hero'
+import Stats from '../components/stats'
 import { EVENT_FULL, LOCATION_URL, EVENT_YEAR, ENTRY_FEE, REGISTRATION_EMBED_URL, MAP_QUERY, SPONSOR_PACKET_URL, MAILTO } from '../lib/constants'
 
 const Index = props => (
   <>
     <Nav />
     <Hero />
-    <Container as="section" variant="copy" mt={4} {...props}></Container>
+    <Container as="section" variant="copy" mt={4} {...props}>
+      <Stats />
+    </Container>
     <Container id="about" as="section" py={4} variant="copy" {...props}>
       <Heading variant="headline" sx={{ fontSize: '40px' }}>
         This is not your typical hackathon.
@@ -229,7 +232,7 @@ const Index = props => (
         Previous years:{' '}
         <Link href="https://hills-hacks-2024.vercel.app/">2024</Link> |{' '}
         <Link href="https://2023.hillshacks.com/">2023</Link> |{' '}
-        <Link href="https://2022.hillshacks.com/" ml={2}>2022</Link> |{' '}
+        <Link href="https://2022.hillshacks.com/">2022</Link> |{' '}
         <Link href="https://2021.hillshacks.com/">2021</Link> |{' '}
         <Link href="https://2020.hillshacks.com/">2020</Link> |{' '}
         <Link href="https://2019.hillshacks.com/">2019</Link> |{' '}
