@@ -11,9 +11,12 @@ See the [source](https://github.com/googol88/hillshacks-vi) of last year's websi
 ## Usage
 
 1. Import this repo to your coding environment of choice. Download it, `git clone`, or use the GitHub import on CodeSandbox (or repl.it, Glitch, etc).
-2. `yarn` to install dependencies.
-3. `yarn dev` to start your server.
-4. Start adding your own pages & components in their respective directories.
+2. ~~`yarn` to install dependencies.~~
+3. ~~`yarn dev` to start your server.~~
+2. `npm install --legacy-peer-deps`
+3. `npm run build`
+4. `npm run dev`
+5. Start adding your own pages & components in their respective directories.
 
 ## Configuration
 
